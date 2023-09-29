@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.TextFlow?>
+
+<Pane fx:id="pane" prefHeight="544.0" prefWidth="754.0" style="-fx-background-color: black; -fx-border-color: white;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+   <children>
+      <AnchorPane fx:id="background" layoutY="22.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="521.0" prefWidth="754.0" style="-fx-background-color: black; -fx-border-color: white; -fx-border-width: 1;">
+         <children>
+            <Button layoutX="84.0" layoutY="103.0" mnemonicParsing="false" onAction="#Compiler" prefHeight="27.0" prefWidth="97.0" text="Compiler">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Label fx:id="labelFilePath" layoutX="39.0" layoutY="80.0" prefHeight="25.0" prefWidth="191.0" style="-fx-alignment: center;" textAlignment="CENTER" textFill="#e2e2e2" />
+            <ImageView fitHeight="186.0" fitWidth="181.0" layoutX="585.0" layoutY="-17.0">
+               <image>
+                  <Image url="@application/snail.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="53.0" layoutY="37.0" mnemonicParsing="false" onAction="#ChargerUnFichier" prefHeight="43.0" prefWidth="159.0" text="Charger Un fichier...">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <graphic>
+                  <ImageView fx:id="imageimport" fitHeight="26.0" fitWidth="25.0">
+                     <image>
+                        <Image url="@application/import.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="31.0" layoutY="220.0" mnemonicParsing="false" onAction="#analyseLexicale" prefHeight="32.0" prefWidth="154.0" text="Analyse Lexicale">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Button layoutX="31.0" layoutY="278.0" mnemonicParsing="false" onAction="#analyseSyntaxique" prefHeight="32.0" prefWidth="154.0" text="Analyse Syntaxique">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Button layoutX="31.0" layoutY="337.0" mnemonicParsing="false" onAction="#analyseSemantique" prefHeight="32.0" prefWidth="154.0" text="Analyse Sémantique">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="34.0" fitWidth="34.0" layoutX="195.0" layoutY="219.0" onMouseClicked="#HelpAnalyseLexicale">
+               <image>
+                  <Image url="@application/help.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fitHeight="34.0" fitWidth="34.0" layoutX="195.0" layoutY="336.0" onMouseClicked="#HelpAnalyseSemantique">
+               <image>
+                  <Image url="@application/help.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fitHeight="34.0" fitWidth="34.0" layoutX="195.0" layoutY="277.0" onMouseClicked="#HelpAnalyseSyntaxique">
+               <image>
+                  <Image url="@application/help.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+                  <ImageView fx:id="btnRemove" fitHeight="20.0" fitWidth="20.0" layoutX="230.0" layoutY="83.0" onMouseClicked="#Remove" visible="false">
+               <image>
+                  <Image url="@application/remove.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ScrollPane fitToHeight="true" fitToWidth="true" layoutX="249.0" layoutY="124.0" prefHeight="372.0" prefWidth="479.0">
+               <content>
+                  <TextArea fx:id="textarea" editable="false" prefHeight="369.0" prefWidth="407.0" style="-fx-control-inner-background: black;">
+                     <font>
+                        <Font name="Berlin Sans FB Demi Bold" size="15.0" />
+                     </font>
+                  </TextArea>
+               </content>
+            </ScrollPane>
+            <ImageView fitHeight="89.0" fitWidth="479.0" layoutX="224.0" layoutY="14.0">
+               <image>
+                  <Image url="@application/Cloud.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="labelMessage" layoutX="286.0" layoutY="29.0" prefHeight="34.0" prefWidth="353.0" style="-fx-alignment: center;" text="bienvenue dans le compilateur snail" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <TitledPane fx:id="panInfo" animated="false" collapsible="false" layoutX="202.0" layoutY="85.0" prefHeight="348.0" prefWidth="375.0" visible="false">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="315.0" prefWidth="387.0">
+                     <children>
+                        <Button layoutX="308.0" layoutY="282.0" mnemonicParsing="false" onAction="#Close" text="Close" />
+                        <TextFlow fx:id="text" layoutX="21.0" layoutY="22.0" prefHeight="245.0" prefWidth="328.0" style="-fx-font-size: 14;" />
+                     </children>
+                  </AnchorPane>
+              </content>
+               <graphic>
+                  <ImageView fitHeight="18.0" fitWidth="18.0" onMouseClicked="#Remove">
+                     <image>
+                        <Image url="@application/information.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </TitledPane>
+            <Button layoutX="93.0" layoutY="419.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#ViewMemory" prefHeight="34.0" prefWidth="63.0">
+               <graphic>
+                  <ImageView fitHeight="42.0" fitWidth="55.0">
+                     <image>
+                        <Image url="@application/ram.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <TitledPane fx:id="panMemory" animated="false" collapsible="false" layoutX="203.0" layoutY="80.0" prefHeight="348.0" prefWidth="375.0" visible="false">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="315.0" prefWidth="387.0">
+                     <children>
+                        <Button layoutX="308.0" layoutY="282.0" mnemonicParsing="false" onAction="#Close" text="Close" />
+                        <Button layoutX="249.0" layoutY="282.0" mnemonicParsing="false" onAction="#ClearMemory" prefHeight="20.0" prefWidth="52.0" style="-fx-background-color: red;" text="Clear" />
+                        <ScrollPane hbarPolicy="NEVER" layoutX="54.0" layoutY="29.0" prefHeight="231.0" prefWidth="269.0">
+                           <content>
+                              <HBox fx:id="table" prefHeight="227.0" prefWidth="266.0" style="-fx-border-color: black;">
+                                 <children>
+                                    <VBox prefHeight="225.0" prefWidth="99.0" style="-fx-border-color: black;">
+                                       <children>
+                                          <Pane prefHeight="29.0" prefWidth="73.0" style="-fx-background-color: lightgrey;">
+                                             <children>
+                                                <Label layoutX="18.0" layoutY="7.0" prefHeight="17.0" prefWidth="50.0" text="Variable">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </Pane>
+                                          <VBox fx:id="Variable" prefHeight="200.0" prefWidth="100.0" />
+                                       </children>
+                                    </VBox>
+                                    <VBox layoutX="11.0" layoutY="11.0" prefHeight="225.0" prefWidth="99.0" style="-fx-border-color: black;">
+                                       <children>
+                                          <Pane prefHeight="29.0" prefWidth="73.0" style="-fx-background-color: lightgrey;">
+                                             <children>
+                                                <Label layoutX="26.0" layoutY="6.0" prefHeight="17.0" prefWidth="34.0" text="Type">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </Pane>
+                                          <VBox fx:id="Type" prefHeight="200.0" prefWidth="100.0" />
+                                       </children>
+                                    </VBox>
+                                    <VBox layoutX="111.0" layoutY="11.0" prefHeight="225.0" prefWidth="99.0" style="-fx-border-color: black;">
+                                       <children>
+                                          <Pane prefHeight="29.0" prefWidth="73.0" style="-fx-background-color: lightgrey;">
+                                             <children>
+                                                <Label layoutX="22.0" layoutY="6.0" prefHeight="17.0" prefWidth="42.0" text="Valeur">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </Pane>
+                                          <VBox fx:id="Valeur" prefHeight="200.0" prefWidth="100.0" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+               <graphic>
+                  <ImageView fitHeight="19.0" fitWidth="33.0" onMouseClicked="#Remove">
+                     <image>
+                        <Image url="@application/ram.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </TitledPane>
+      
+                     </children>
+      </AnchorPane>
+      <Label layoutX="7.0" layoutY="-3.0" prefHeight="27.0" prefWidth="97.0" text="Compilateur Snail" textFill="WHITE">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="12.0" />
+         </font>
+      </Label>
+      <Button fx:id="closewindow" layoutX="734.0" layoutY="6.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#CloseWindow" prefHeight="9.0" prefWidth="8.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <graphic>
+            <ImageView fitHeight="18.0" fitWidth="29.0">
+               <image>
+                  <Image url="@application/close.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </graphic>
+      </Button>
+   </children>
+</Pane>

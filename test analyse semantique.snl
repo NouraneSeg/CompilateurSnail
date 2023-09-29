@@ -1,0 +1,11 @@
+ Snl_Real Var_1 %.
+Snl_Int i,j %.
+Snl_Int i %.
+Set u 2 %.
+Set Var_1 15 %.
+Set Var_1 15,67 %.
+Set i 12,5 %.
+Set i 12 %.
+Get j from Var_1 %.
+Get j from i %.
+Get Var_1 from j %.

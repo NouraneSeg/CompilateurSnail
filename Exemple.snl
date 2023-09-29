@@ -1,0 +1,14 @@
+ Snl_Int i,j %.
+Snl_Real Var_1 %.
+Snl Real Var_2 %.
+Else
+Set var 34 %.
+Set i 12 %.
+Set j 14,23 %.
+If % i < j %
+Get j from i %.
+Else
+Start
+Set Var_1 24,3 %.
+Get Var_2 from i %.
+Snl_Close

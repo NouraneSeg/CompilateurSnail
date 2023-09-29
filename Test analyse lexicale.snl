@@ -1,0 +1,8 @@
+ Snl_Start Snl_Close %.
+Snl_Int Snl_Real Set Get
+i,j Var1 n12_G8_3r 12abc _a
+123 12,233 43, 11,11, 11,11,22 ,56
+Snl_Put " hello ! "
+If % Else Start Finish
+> < == <= >= !=
+%.. this is a comment

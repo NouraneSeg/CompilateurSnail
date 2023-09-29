@@ -1,0 +1,34 @@
+ %.. toutes les erreurs syntaxiques possibles
+lol
+Start
+Else
+Snl_Int i
+Set i 12 %. Get j from i %.
+Snl_Int i,j %.
+Snl_Int _kiki %.
+Snl_Int i,j 32 %.
+Set i 12 %.
+Set %.
+Set i %.
+Set 12 %.
+Set 3_E 12 %.
+Set i 3_E %.
+Set i 12 32 %.
+Get j from i %.
+Get %.
+Get j %.
+Get j from %.
+Get j from 3_E %.
+Get 3_E from i %.
+Get j 3_E i %.
+Get j from i 32 %.
+Snl_Put i %.
+Snl_Put "hello!" %.
+Snl_Put %.
+Snl_Put 3_E %.
+Snl_Put i 32 %.
+If % i <= j % do
+If % i <= j %
+If
+If % %
+If % 3_E %
